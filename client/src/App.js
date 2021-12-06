@@ -3,12 +3,17 @@ import getWeb3 from "./getWeb3";
 import FarmerProduct from "./contracts/FarmerProduct.json";
 import {
   BrowserRouter as Router,
-  Switch ,
+  Routes ,
   Route,
   Link
 } from "react-router-dom";
 import Client from "./components/client";
+import Client1 from "./components/Client1";
 import Lots from "./components/lots";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'
+
+
 
 class App extends Component {
  
@@ -70,20 +75,21 @@ class App extends Component {
             <li>
               <Link to="/quality">Quality</Link>
             </li>
-        
+
+            <li>
+              <Link to="/client1">Client1</Link>
+            </li>
+
           </ul>
         </nav>
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-        <Switch >
-          <Route path="/client"> <Client/>
-          </Route>
-
-          <Route path="/quality"> <Lots/>
-          </Route>
-          
-        </Switch >
+        <Routes>
+          <Route path="/client" element = {<Client/>} /> 
+          <Route path="/quality" element = {<Lots/>} /> 
+          <Route path="/client1" element = {<Client1/>} /> 
+        </Routes>
    
     </Router>
     );

@@ -137,6 +137,7 @@ class Client extends Component {
                     </div>
 
                     <div> Total price  = {this.unit_price * this.quantity} </div>
+
                     <input type="submit" value="Submit" /><br />
 
                     
