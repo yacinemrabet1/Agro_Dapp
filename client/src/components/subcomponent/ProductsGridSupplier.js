@@ -13,7 +13,7 @@ const square_style =  {
   marginRight: "5px",
   paddingLeft: "6px",
   paddingRight: "6px",
-  backgroundImage: "linear-gradient(to right, #BAFE50, #EEFCD8)",
+  backgroundImage: "linear-gradient(to top, #BAFE50, #EEFCD8)", 
   borderRadius : "10px",
   fontSize : "15px",
   fontFamily : "sans-serif",
@@ -46,6 +46,7 @@ function ProductsGridSupplier({ handleFormClick }) {
 									<GridListTile  style = {{height : "80%" }} key={tile.fid} cols={.66}  >
                  
                   <div class="square" style ={square_style}>
+                    <img src="mejrimage.png" width={300} height={150}/>
                   <h3>product Id : {tile.product_id}</h3>
                   <h3>Selling Price : {tile.selling_price}</h3>
                  

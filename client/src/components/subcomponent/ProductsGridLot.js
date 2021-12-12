@@ -40,29 +40,32 @@ function ProductsGridLot({ handleFormClick }) {
   return ( 
     
       <div >
-							<GridList className="grid" style= {div_style} >
+							<div class="row row-cols-1 row-cols-md-3 g-4">
 								{handleFormClick.added_lots.map(tile => (
-									<GridListTile  style = {{height : "80%" }} key={tile.fid} cols={.66}  >
-                 
-                  <div class="square" style ={square_style}>
-                  <h3>fid : {tile.fid.slice(38)}...{tile.fid.slice(-5)}</h3>
-                  <h3>test date : {tile.test_date}</h3>
-                  <h3>expiration date : {tile.exp_date}</h3>
-                  <h3>crop type : {tile.crop_type}</h3>
-                  <h3>Tester Address : {tile.tester_id.slice(38)}...{tile.tester_id.slice(-5)}</h3>
-                  <h3>farmer name : {tile.farmer_name}</h3>
-                  <h3>address : {tile.location}</h3>
-                  <h3>price : {tile.total_price}</h3>
-                  
-                  {handleFormClick.supp
-                      ? <button className='formicon' value={tile.fid}  onClick={handleClick} >BUY</button>
-                      : <h1></h1>
-                    }
+									<div class="col">
+                    <div class="card" style={{borderWidth : "4px;", borderRadius: "10px" }}>
+                    <img src="card1.jpg" class="card-img-top" alt="wheat" style={{ borderRadius: "10px 10px 0px 0px" }}/>
+                    <div class="card-body">
+                    <h5 class="card-title">fid :{tile.fid.slice(38)}...{tile.fid.slice(-5)}</h5>
+                    <h6 class="card-title">test date : {tile.test_date}</h6>
+                    <h6 class="card-title">expiration date : {tile.exp_date}</h6>
+                    <h6 class="card-title">crop type : {tile.crop_type}</h6>
+                    <h6 class="card-title">Tester Address : {tile.tester_id.slice(38)}...{tile.tester_id.slice(-5)}</h6>
+                    <h6 class="card-title">farmer name : {tile.farmer_name}</h6>
+                    <h6 class="card-title">address : {tile.location}</h6>
+                    <h6 class="card-title">price : {tile.total_price}</h6>
+                    
+                    {handleFormClick.supp
+                        ? <button className='formicon' value={tile.fid}  onClick={handleClick} >BUY</button>
+                        : <h1></h1>
+                      }
 
-                  </div>
-									</GridListTile>
+                    </div>
+                    </div>
+                    </div>
 								))}
-							</GridList>
+							
+			</div>
 			</div>
 
                 

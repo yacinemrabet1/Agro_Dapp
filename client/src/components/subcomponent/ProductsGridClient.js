@@ -14,7 +14,7 @@ const square_style =  {
   marginRight: "5px",
   paddingLeft: "6px",
   paddingRight: "6px",
-  backgroundImage: "linear-gradient(to right, #BAFE50, #EEFCD8)",
+  //backgroundImage: "linear-gradient(to right, #BAFE50, #EEFCD8)",
   borderRadius : "10px",
   fontSize : "15px",
   fontFamily : "sans-serif",

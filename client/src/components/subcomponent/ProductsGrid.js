@@ -42,27 +42,27 @@ function ProductsGrid({ handleFormClick }) {
   }
   return ( 
     
-      <div >
-							<GridList className="grid" style= {div_style} >
-								{handleFormClick.lot_data.map(tile => (
-									<GridListTile  style = {{height : "80%" }} key={tile.fid} cols={.66}  >
-                 
-                  <div class="square" style ={square_style}>
-                  <h3>fid :{tile.fid.slice(38)}...{tile.fid.slice(-5)}</h3>
-                  <h3>farmer_name : {tile.farmer_name}</h3>
-                  <h3>location : {tile.location}</h3>
-                  <h3>crop_type : {tile.crop_type}</h3>
-                  <h3>phone_number : {tile.phone_number}</h3>
-                  <h3>quantity : {tile.quantity}</h3>
-                  <h3>unit_price : {tile.unit_price}</h3>
-                  <h3>total_price : {tile.total_price}</h3>
-                  <button className='formicon' value={tile.fid}  onClick={handleClick} >Verify</button>
-
-                  </div>
-									</GridListTile>
-								))}
-							</GridList>
-			</div>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+    {handleFormClick.lot_data.map(tile => (
+    <div class="col">
+        <div class="card" style={{borderWidth : "4px;", borderRadius: "10px" }}>
+            <img src="card1.jpg" class="card-img-top" alt="wheat" style={{ borderRadius: "10px 10px 0px 0px" }}/>
+            <div class="card-body">
+                <h5 class="card-title">fid :{tile.fid.slice(38)}...{tile.fid.slice(-5)}</h5>
+                <h6 class="card-title">farmer_name : {tile.farmer_name}</h6>
+                <h6 class="card-title">location : {tile.location}</h6>
+                <h6 class="card-title">crop_type : {tile.crop_type}</h6>
+                <h6 class="card-title">phone_number : {tile.phone_number}</h6>
+                <h6 class="card-title">quantity : {tile.quantity}</h6>
+                <h6 class="card-title">unit_price : {tile.unit_price}</h6>
+                <h6 class="card-title">total_price : {tile.total_price}</h6>
+                <button className='formicon' value={tile.fid}  onClick={handleClick} >Verify</button>
+                
+            </div>
+        </div>
+    </div>
+    ))}
+</div>
 
                 
     

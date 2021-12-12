@@ -143,13 +143,14 @@ GetAccountDetails = async () => {
     render() {
         
             return (
-                <Container >
+                <div style={{height:"950px"}}>
+                <Container className="middle" >
                 <Row> 
                     <Col className="justify-content-md-left">
                     <Container className= "card card-body mb-3 mt-3 " >
                         
                         <Form onSubmit={this.handleSubmit} >
-                            <Row className="justify-content-md-left mb-3" >
+                            <Row className="justify-content-md-center mb-3" >
                             <Col xs lg="4">
                             <Form.Group>
                                 <Form.Label> Name </Form.Label>
@@ -163,7 +164,7 @@ GetAccountDetails = async () => {
                             </Form.Group>
                             </Col>
                             </Row>
-                            <Row className="justify-content-md-left mb-3" >
+                            <Row className="justify-content-md-center mb-3" >
                             <Col xs lg="4">
                             <Form.Group>
                                 <FormLabel> Crop type </FormLabel>
@@ -177,7 +178,7 @@ GetAccountDetails = async () => {
                             </Form.Group>
                             </Col>
                             </Row>
-                            <Row className="justify-content-md-left mb-3">
+                            <Row className="justify-content-md-center mb-3">
                             <Col xs lg="4">
                             <Form.Group>
                                 <FormLabel> Quantity </FormLabel>
@@ -191,9 +192,9 @@ GetAccountDetails = async () => {
                             </Form.Group>
                             </Col>
                             </Row>
-                            <Row className="justify-content-md-left mb-3">
+                            <Row className="justify-content-md-center mb-3">
                                 <Col className="justify-content-md-center" xs lg="2">
-                                    <input className= "btn btn-primary" type= "submit" value= "submit" disabled={this.state.disabled}/> 
+                                    <input className= "btn btn-secondary btn-lg active" type= "submit" value= "submit" disabled={this.state.disabled}/> 
                                 </Col>
                             </Row>
                         </Form>
@@ -220,6 +221,7 @@ GetAccountDetails = async () => {
                     
                     </Row>
                 </Container>
+                </div>
               );
         }
     

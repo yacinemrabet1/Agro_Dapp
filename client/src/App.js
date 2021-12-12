@@ -65,37 +65,40 @@ class App extends Component {
   
   render() {
     return (
+      <div class="main justify-content-center" style={{height: "100%"}}>
       <Router>
     
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
+      <nav class="justify-content-end navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <Link class="nav-link" to="/">Home</Link>
             </li>
-            <li>
-              <Link to="/farmer">farmer</Link>
-            </li>
-
-            <li>
-              <Link to="/quality">Quality</Link>
-            </li>
-
-            <li>
-              <Link to="/supplier">Supplier</Link>
+            <li class="nav-item">
+              <Link class="nav-link" to="/farmer">farmer</Link>
             </li>
 
-            <li>
-              <Link to="/client">Client</Link>
+            <li class="nav-item">
+              <Link class="nav-link" to="/quality">Quality</Link>
             </li>
 
+            <li class="nav-item">
+              <Link class="nav-link" to="/supplier">Supplier</Link>
+            </li>
 
-  
-
+            <li class="nav-item">
+              <Link class="nav-link" to="/client">Client</Link>
+            </li>
           </ul>
+          </div>
         </nav>
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
+          
         <Routes>
           <Route path="/farmer" element = {<Farmer/>} /> 
         </Routes>
@@ -111,8 +114,10 @@ class App extends Component {
         <Routes>
           <Route path="/client" element = {<Client/>} /> 
         </Routes>
-   
+        
     </Router>
+    </div>
+    
     );
   }
 }

@@ -62,7 +62,7 @@
   height: 40px;
   left: 85%;
   top: 10px;
-  background:#aff3c0;
+  background:#e6e6e6;
   border-radius: 24px;
   cursor: pointer;
 }
@@ -82,7 +82,7 @@
 .form-box{
   margin-top: 7vh;
   opacity:80%;
-  background: rgb(199, 240, 103);
+  background: rgb(255, 255, 255);
   padding-right: 80px;
   padding-left: 80px;
   border-radius: 20px;
@@ -131,7 +131,7 @@ label {
   width: 75%;
   justify-content: center;
   align-items: center;
-  background-color: rgb(142, 190, 142);
+  background-color: rgb(179, 179, 179);
   color: rgb(12, 12, 12);
   margin-top: 5px;
   border-radius: 20px;
@@ -147,8 +147,8 @@ label {
 .quality-btn:hover{
   transform: scale(1.03);
   letter-spacing: 4px;
-  background-color: #0cf5a7;
-  color: #0cce2c;
+  background-color: #000000;
+  color: #ffffff;
 }
 
 .show {
@@ -160,4 +160,17 @@ label {
 .show.active {
   transform: translateY(100px) scale(0) rotateY(180deg);
   opacity: 0;
+}
+
+
+
+.main {
+  font-family: sans-serif;
+  text-align: center;
+
+    background-image: url(./images/bg2.jpg);
+    height: 100vh;
+    background-size: cover;
+
+    background-repeat: no-repeat;
 }

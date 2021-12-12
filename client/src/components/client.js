@@ -8,6 +8,7 @@ import QualityForm from './subcomponent/QualityForm'
 import ProductsGrid from './subcomponent/ProductsGrid';
 import ProductsGridClient from './subcomponent/ProductsGridClient';
 import '../App.css'
+import ProdGrid from "./subcomponent/ProdGridSupp";
 
 var supp = false ; 
 
@@ -157,7 +158,7 @@ export default function Client(){
         <h1>hello </h1>
         <h1>{accounts}</h1>
         <ProductsGridClient handleFormClick={{all_products}} />
-
+        
         
       </div>
     );
