@@ -7,12 +7,13 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Client1 from "./components/Client1";
+import Farmer from "./components/farmer";
 import Lots from "./components/lots";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
 import Lot from "./components/lots";
 import Supplier from "./components/supplier";
+import Client from "./components/client";
 
 
 
@@ -72,7 +73,7 @@ class App extends Component {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/client">Client</Link>
+              <Link to="/farmer">farmer</Link>
             </li>
 
             <li>
@@ -83,6 +84,11 @@ class App extends Component {
               <Link to="/supplier">Supplier</Link>
             </li>
 
+            <li>
+              <Link to="/client">Client</Link>
+            </li>
+
+
   
 
           </ul>
@@ -91,7 +97,7 @@ class App extends Component {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Routes>
-          <Route path="/client" element = {<Client1/>} /> 
+          <Route path="/farmer" element = {<Farmer/>} /> 
         </Routes>
 
         <Routes>
@@ -100,6 +106,10 @@ class App extends Component {
 
         <Routes>
           <Route path="/supplier" element = {<Supplier/>} /> 
+        </Routes>
+
+        <Routes>
+          <Route path="/client" element = {<Client/>} /> 
         </Routes>
    
     </Router>

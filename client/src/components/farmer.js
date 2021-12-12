@@ -4,7 +4,7 @@ import getWeb3 from "../getWeb3";
 import FarmerProduct from "../contracts/FarmerProduct.json";
 
 
-class Client1 extends Component {
+class Farmer extends Component {
     
     state = {farmer: {
         nom : '', location : '', crop: '', phone: '', unit_price: '', quantity: ''},
@@ -225,4 +225,4 @@ GetAccountDetails = async () => {
     
 }
  
-export default Client1;
+export default Farmer;
