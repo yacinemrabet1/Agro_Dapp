@@ -1,9 +1,12 @@
-.App {
-  text-align: center;
-}
-
 .App-logo {
   height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
 
 .App-header {
@@ -18,14 +21,143 @@
 }
 
 .App-link {
-  color: #09d3ac;
+  color: #61dafb;
 }
 
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.MuiGridListTile-root{
 
-/*.main-container {
+  height: 100%;
+}
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.products-grid {
+  position: absolute;
+  background-color: #24252A;
   width: 100%;
-  height: 100vh;
+  height: 60px;
+  left: 0px;
+  top: 0px;
+}
+
+.formicon {
+  position: absolute;
+  width: 80px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bolder;
+  color: black;
+  height: 40px;
+  left: 85%;
+  top: 10px;
+  background:#aff3c0;
+  border-radius: 24px;
+  cursor: pointer;
+}
+
+.formicon:hover{
+  color: rgb(0, 0, 0);
+}
+
+.quality-form{
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-}*/
+  min-height: 100vh;
+}
+
+.form-box{
+  margin-top: 7vh;
+  opacity:80%;
+  background: rgb(199, 240, 103);
+  padding-right: 80px;
+  padding-left: 80px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px 1px rgba(0, 0, 0, 0.2);
+}
+
+.quality-text{
+  width: 100%;
+  color: rgb(5, 5, 5);
+  border-bottom: 2px solid rgb(8, 8, 8);
+  line-height: 30px;
+  width: 100%;
+  font-weight: bolder;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 5vh;
+}
+
+label {
+  color:black;
+  width: 100%;
+  text-align: center;
+}
+
+.quality-box{
+  border: 1px solid rgb(20, 19, 19);
+  display: center;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  padding: 2px;
+  padding-left: 5px;
+  padding-right: 5px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin: 5px;
+  font-size: 11pt;
+  background: transparent;
+  transition: 1s;
+  outline: none;
+}
+
+.quality-btn{
+  width: 75%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(142, 190, 142);
+  color: rgb(12, 12, 12);
+  margin-top: 5px;
+  border-radius: 20px;
+  border: none;
+  font-size: 15pt;
+  font-weight: 700;
+  transition: 1s;
+  outline: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.quality-btn:hover{
+  transform: scale(1.03);
+  letter-spacing: 4px;
+  background-color: #0cf5a7;
+  color: #0cce2c;
+}
+
+.show {
+  display: block;
+  transition: 800ms;
+  opacity: 1;
+}
+
+.show.active {
+  transform: translateY(100px) scale(0) rotateY(180deg);
+  opacity: 0;
+}

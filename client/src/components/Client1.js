@@ -1,5 +1,7 @@
 import React, { Component, useEffect } from "react";
 import { Container, Row, Col, Form, FormControl, FormLabel, Button } from "react-bootstrap";
+import getWeb3 from "../getWeb3";
+import FarmerProduct from "../contracts/FarmerProduct.json";
 
 
 class Client1 extends Component {
@@ -10,7 +12,87 @@ class Client1 extends Component {
 };
 
 
+
+componentDidMount = async () => {
+    try {
+    // Get network provider and web3 instance.
+    const web3 = await getWeb3();
+
+    // Use web3 to get the user's accounts.
+    const accounts = await web3.eth.getAccounts();
+
+    // Get the contract instance.
+    const networkId = await web3.eth.net.getId();
+    const deployedNetwork = FarmerProduct.networks[networkId];
+    const instance = new web3.eth.Contract(
+        FarmerProduct.abi,
+        deployedNetwork && deployedNetwork.address,
+    );
+   
+    // Set web3, accounts, and contract to the state, and then proceed with an
+    // example of interacting with the contract's methods.
+    this.setState({ web3, accounts, contract: instance }, this.GetAccountDetails);
+    console.log( this.state);
+    } catch (error) {
+    // Catch any errors for any of the above operations.
+    alert(
+        `Failed to load web3, accounts, or contract. Check console for details.`,
+    );
+    console.error(error);
+    }
+};
+
+
+GetAccountDetails = async () => {
+    const { accounts, contract } = this.state;
+    var bool_var = await contract.methods.farmer_exist(accounts[0]).call()
+    //console.log(bool_var)
+    //console.log(await contract.methods.Get_list().call())  ; 
+            
+
+    if (bool_var) {
+        this.setDisable(true)
+        console.log('exist')
+        //console.log('exist');
+        //console.log(this.state.farmer);
+        let current_farmer = await contract.methods.Get_crop_farmer_by_key(accounts[0]).call() ; 
+        var secondKey = Object.keys(current_farmer)[1]; //fetched the key at second index
+        console.log(current_farmer[secondKey].fid);
+        console.log(current_farmer[secondKey].farmer_name);
+        console.log(current_farmer[secondKey].location);
+        console.log(current_farmer[secondKey].fid);
+        console.log(current_farmer[secondKey].fid);
+
+        this.setState({farmer : 
+            {
+                nom : current_farmer[secondKey].farmer_name , 
+                location : current_farmer[secondKey].location, 
+                crop: current_farmer[secondKey].crop_type, 
+                phone: current_farmer[secondKey].phone_number, 
+                unit_price: current_farmer[secondKey].unit_price, 
+                quantity: current_farmer[secondKey].quantity
+            }
+        
+        })
+   
+        //show profile
+        
+    }
+    else {
+        console.log("new")
+        this.setDisable(false)
+
+       
+
+    }
+   
+  
+  };
+
+
     handleSubmit  = (async (event) =>  {
+        const { accounts, contract } = this.state ;
+
         let tmp = {
             nom: event.target.name.value, 
             location: event.target.location.value,
@@ -19,10 +101,25 @@ class Client1 extends Component {
             unit_price: event.target.unit_price.value,
             quantity: event.target.quantity.value
         }
-        this.setState({farmer : tmp  })
-        this.setDisable(true)
-        console.log(tmp)
-        console.log(this.state.farmer)
+        this.setState({farmer : tmp  }, ()=>{
+            console.log("plotting state")
+            console.log(this.state.farmer)
+            contract.methods.AddNewCrop(accounts[0],
+                tmp.nom, 
+                tmp.location,
+                tmp.crop, 
+                tmp.phone,
+                tmp.unit_price,
+                tmp.quantity).send({ from: accounts[0] });
+            this.setDisable(true)
+
+
+
+        })
+        
+        
+        
+
         event.preventDefault();
     });
     

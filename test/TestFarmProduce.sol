@@ -33,10 +33,6 @@ contract TestFarmProduce {
        // Assert.equal(farmer_crop_array[0],address(this),"address mismatch");       
     }    
 
-    function testGetBYFarmerId()  public {
-        string memory farmername  = farmproduct.Get_crop_farmer_id_by_key(msg.sender) ; 
-        Assert.equal(farmername,string("farmer_yacine"),"farmer name not equal farmer_yacine");
-    }
     
 
     function testNumberCrop() public{

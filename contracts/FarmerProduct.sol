@@ -142,6 +142,11 @@ contract FarmerProduct {
        return number_lots  ;
    }
 
+   function  Get_lots() public view returns (lot[] memory ){
+       return all_lots  ;
+   }
+
+
 
     //_________________________ SUPPLIER SUPPLIER SUPPLIER SUPPLIER SUPPLIER SUPPLIER _____________________
     function AddNewSupplier(
@@ -161,6 +166,11 @@ contract FarmerProduct {
     function  Getnumber_product() public view returns (uint ){
        return number_products  ;
    }
+
+   function  Get_ForSaleProduct() public view returns (supplier[] memory ){
+       return all_product_supplier  ;
+   }
+
 
 
 

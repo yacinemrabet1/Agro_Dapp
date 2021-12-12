@@ -7,11 +7,12 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Client from "./components/client";
 import Client1 from "./components/Client1";
 import Lots from "./components/lots";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css'
+import Lot from "./components/lots";
+import Supplier from "./components/supplier";
 
 
 
@@ -19,7 +20,7 @@ class App extends Component {
  
   state = { storageValue: 0, web3: null, accounts: null, contract: null };
 
-  componentDidMount = async () => {
+  componentDidMount = async () => { //error error :'(
     try {
       // Get network provider and web3 instance.
       const web3 = await getWeb3();
@@ -27,6 +28,8 @@ class App extends Component {
       // Use web3 to get the user's accounts.
       const accounts = await web3.eth.getAccounts();
 
+
+          
       // Get the contract instance.
       const networkId = await web3.eth.net.getId();
       const deployedNetwork = FarmerProduct.networks[networkId];
@@ -77,8 +80,10 @@ class App extends Component {
             </li>
 
             <li>
-              <Link to="/client1">Client1</Link>
+              <Link to="/supplier">Supplier</Link>
             </li>
+
+  
 
           </ul>
         </nav>
@@ -86,9 +91,15 @@ class App extends Component {
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Routes>
-          <Route path="/client" element = {<Client/>} /> 
-          <Route path="/quality" element = {<Lots/>} /> 
-          <Route path="/client1" element = {<Client1/>} /> 
+          <Route path="/client" element = {<Client1/>} /> 
+        </Routes>
+
+        <Routes>
+          <Route path="/quality" element = {<Lot/>} /> 
+        </Routes>
+
+        <Routes>
+          <Route path="/supplier" element = {<Supplier/>} /> 
         </Routes>
    
     </Router>
