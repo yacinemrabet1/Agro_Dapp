@@ -8,7 +8,7 @@ import QualityForm from './subcomponent/QualityForm'
 import ProductsGrid from './subcomponent/ProductsGrid';
 import ProductsGridLot from './subcomponent/ProductsGridLot';
 import '../App.css'
-import ProdGrid from "./subcomponent/ProdGrid";
+
  
 /*
 class Lots extends Component {
@@ -238,7 +238,7 @@ export default function Lot(){
   
     return (
       <div >
-        <h1>{accounts}</h1>
+        <h6>Public key: {accounts}</h6>
         <QualityForm  isShowForm={{isShowFrom,current_item,UpdateLot}} />
         
         <ProductsGrid handleFormClick={{handleFormClick,lot_data}} />

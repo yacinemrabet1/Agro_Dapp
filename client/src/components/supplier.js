@@ -5,12 +5,9 @@ import differenceBy from 'lodash/differenceBy'
 import getWeb3 from "../getWeb3";
 import FarmerProduct from "../contracts/FarmerProduct.json";
 import SupplierPrice from './subcomponent/SupplierPrice'
-import ProductsGrid from './subcomponent/ProductsGrid';
 import ProductsGridLot from './subcomponent/ProductsGridLot';
-import ProdGridLot from './subcomponent/ProdGridLot';
-import ProductsGridSupplier from './subcomponent/ProductsGridSupplier';
 import '../App.css'
-import ProdGridSupp from "./subcomponent/ProdGridSupp";
+import ProductsGridSupplier from "./subcomponent/ProductsGridSupplier";
 
 var supp = true;
 /**/
@@ -161,9 +158,9 @@ export default function Supplier() {
     <div >
       <h6>Public key: {accounts}</h6>  
       <h2>My Products</h2>    
-      <ProdGridSupp handleFormClick={{ handleFormClick, Myproducts, supp }}  />
+      <ProductsGridSupplier handleFormClick={{ handleFormClick, Myproducts, supp }}  />
       <h2>Available Products</h2>
-      <ProdGridLot handleFormClick={{ handleFormClick, added_lots, supp }}/>
+      <ProductsGridLot handleFormClick={{ handleFormClick, added_lots, supp }}/>
       <SupplierPrice isShowForm={{ isShowFrom, current_item, BuyProduct }} />
     </div>
   );

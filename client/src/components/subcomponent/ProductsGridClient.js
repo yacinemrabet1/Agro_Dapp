@@ -14,7 +14,7 @@ const square_style =  {
   marginRight: "5px",
   paddingLeft: "6px",
   paddingRight: "6px",
-  //backgroundImage: "linear-gradient(to right, #BAFE50, #EEFCD8)",
+  backgroundImage: "linear-gradient(to top, #BAFE50, #EEFCD8)",
   borderRadius : "10px",
   fontSize : "15px",
   fontFamily : "sans-serif",
@@ -39,21 +39,21 @@ function ProductsGridClient({ handleFormClick }) {
     
 
       <div >
-							<GridList className="grid" style= {div_style} >
+							<div class="row row-cols-1 row-cols-md-3 g-4">
 								{handleFormClick.all_products.map(tile => (
-									<GridListTile  style = {{height : "80%" }} key={tile.fid} cols={.66}  >
-
-                  <div class="square" style ={square_style}>
-                  <QRCode value={JSON.stringify(tile)} />
-                  <h1>{tile.crop_type}</h1>
-                  <h1>{tile.grade}</h1>
-                  
-
-                                               
+									<div class="col">
+                  <div class="card" style={{borderWidth : "4px;", borderRadius: "10px", background: "transparent"}}>
+                    <div className="justify-content-center">
+                    <QRCode value={JSON.stringify(tile)} alt="wheat" style={{ borderRadius: "10px 10px 10px 10px"}}/>
+                    </div>
+                      <div class="card-body">
+                        <h5>Crop: {tile.crop_type}</h5>
+                        <h6>Grade: {tile.grade}</h6>          
+                      </div>
+									</div>
                   </div>
-									</GridListTile>
 								))}
-							</GridList>
+							</div>
 			</div>
 
                 
