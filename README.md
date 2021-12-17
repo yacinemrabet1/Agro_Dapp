@@ -1,11 +1,11 @@
-#Agro Dapp
+# Agro Dapp
 This project is a blockchain Application for Agricultural Supply Chain based on Ethereum smart contracts using Truffle and Solidity. <br/>
 The application is rendered with React 17.
-##Requirements
+## Requirements
 * [Nodejs](https://nodejs.org/en/download/)
 * [Ganache](https://trufflesuite.com/ganache/)
 * [MetaMask](https://metamask.io/download.html)
-##Installation
+## Installation
 - clone this repository on your machine
 - open your command line tool and run the following commands:
 ```bash
@@ -19,7 +19,7 @@ The application is rendered with React 17.
   truffle compile
   truflle migrate
 ```
-##Run the project
+## Run the project
 ```bash
   npm start
 ```
